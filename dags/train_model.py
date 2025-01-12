@@ -57,9 +57,9 @@ def train_model():
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2025, 1, 12),
+    'start_date': datetime(2025, 1, 13),
     'email_on_failure': False,
-    'retries': 2,
+    'retries': 3,
     'retry_delay': timedelta(minutes=5),
 }
 
