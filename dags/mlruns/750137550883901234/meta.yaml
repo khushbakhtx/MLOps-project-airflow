@@ -1,0 +1,6 @@
+artifact_location: file:///G:/AI%2C%20ML%2C%20and%20Python/mlops-course/final-project/project/dags/mlruns/750137550883901234
+creation_time: 1736708543653
+experiment_id: '750137550883901234'
+last_update_time: 1736708543653
+lifecycle_stage: active
+name: project_experiment

@@ -10,8 +10,8 @@ import numpy as np
 from sklearn.metrics import accuracy_score, roc_auc_score
 
 import mlflow
-from ..models.train_catboost import train_cat
-from ..data.preprocessing import load_data
+from models.train_catboost import train_cat
+from data.preprocessing import load_data
 
 warnings.filterwarnings('ignore')
 
@@ -27,7 +27,7 @@ LEARNING_RATE = 0.1
 DEPTH = 6
 
 EXPERIMENT_NAME = 'project_experiment'
-mlflow.set_tracking_uri(os.getenv("TRACKING_URI"))
+mlflow.set_tracking_uri("http://127.0.0.1:5000")
 mlflow.set_experiment(experiment_name=EXPERIMENT_NAME)
 
 def train_model():
@@ -64,7 +64,7 @@ default_args = {
 }
 
 dag = DAG(
-    'переобучение модели catboost',
+    'train_catboost_model',
     default_args=default_args,
     description='dag для переоучения модели c применением логирования mlflow ',
     schedule_interval=timedelta(days=1),

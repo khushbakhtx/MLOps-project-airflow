@@ -12,8 +12,9 @@
 
 5. `airflow users create --username khushbakhtx --firstname Khushbakht --lastname Shoymardonov --role Admin --email khushbakht.dev@gmail.com --password admin` : creating user administrator for entering to airflow web interface.
 
-6. docker-compose build -> docker-compose up
+6. `docker-compose build` -> `docker-compose up`
 
+7. `localhost:8080` to set up dags...
 
 
 
