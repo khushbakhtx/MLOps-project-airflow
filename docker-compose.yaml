@@ -1,0 +1,60 @@
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    ports:
+      - "5434:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U airflow"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  scheduler:
+    container_name: airflow_scheduler
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ./scripts/airflow-entrypoint.sh
+    command: scheduler
+    restart: on-failure
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - .env
+    ports:
+      - "8794:8793" # If needed for custom scheduler port
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./airflow-logs:/opt/airflow/logs
+      - ./scripts:/opt/airflow/scripts
+
+  webserver:
+    container_name: airflow_webserver
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ./scripts/airflow-entrypoint.sh
+    command: webserver
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - .env
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./airflow-logs:/opt/airflow/logs
+      - ./scripts:/opt/airflow/scripts
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "[ -f /usr/local/airflow/airflow-webserver.pid ]"]
+      interval: 30s
+      timeout: 30s
+      retries: 2
