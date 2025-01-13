@@ -30,6 +30,9 @@
 - **PS. Для запустка airflow необходимо было чтобы Docker Engine и MLflow ui были запущены**
 
 ---
+## Проект по классификации (multi-classification) успеваемости студентов
+[Ccылка на датасет](https://www.kaggle.com/datasets/rabieelkharoua/students-performance-dataset?select=Student_performance_data+_.csv)
+
 
 ## некие записи во время процесса работы над проектом:
 
