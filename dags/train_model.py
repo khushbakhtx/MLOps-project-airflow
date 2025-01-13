@@ -11,9 +11,7 @@ from sklearn.metrics import accuracy_score, roc_auc_score
 import mlflow
 import mlflow.sklearn
 from models.train_catboost import train_cat
-# from data.preprocessing import load_data
-from features.feature_engineering  import feature_engineering
-from sklearn.model_selection import train_test_split
+from data.preprocessing import load_data
 
 warnings.filterwarnings('ignore')
 
@@ -33,26 +31,6 @@ EXPERIMENT_NAME = 'project_experiment'
 mlflow.set_tracking_uri("http://host.docker.internal:5000")
 mlflow.set_experiment(experiment_name=EXPERIMENT_NAME)
 print(f"Current experiment: {mlflow.get_experiment_by_name(EXPERIMENT_NAME)}")
-
-
-
-TEST_SIZE = 0.2
-RANDOM_STATE = 42
-
-def load_data(path):
-
-    data = pd.read_csv(path)
-
-    X = data.drop(['GradeClass', 'StudentID'], axis=1)
-    y = data['GradeClass']
-
-    X = feature_engineering(X)
-
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE)
-
-    return X_train, X_test, y_train, y_test
-
-
 
 def train_model():
 
@@ -88,14 +66,14 @@ with DAG(
     'train_catboost_model',
     default_args=default_args,
     catchup=False,
-    description='dag для переоучения модели c применением логирования mlflowSW',
+    description='dag для переоучения модели c применением логирования mlflow',
     schedule_interval=None,
 ) as dag:
 
     # первый таск. загрузка данных обработанных
     load_task = PythonOperator(
         task_id='load_data',
-        python_callable=load_data, 
+        python_callable=load_data,
         op_kwargs={"path":PATH},
         provide_context=True,
     )
@@ -103,7 +81,7 @@ with DAG(
     # второй таск. переобучение модели
     train_task = PythonOperator(
         task_id='train_model',
-        python_callable=train_model,
+        python_callable=train_model, # в данном файле
         provide_context=True,
     )
 
