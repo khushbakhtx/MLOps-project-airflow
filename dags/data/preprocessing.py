@@ -1,10 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-
 from features.feature_engineering import feature_engineering
-
-import mlflow
 
 TEST_SIZE = 0.2
 RANDOM_STATE = 42
@@ -12,8 +9,6 @@ RANDOM_STATE = 42
 def load_data(path):
 
     data = pd.read_csv(path)
-
-    mlflow.log_artifact(data) # Логируем данные как артефакт, датасет оказался обработанным.
 
     X = data.drop(['GradeClass', 'StudentID'], axis=1)
     y = data['GradeClass']

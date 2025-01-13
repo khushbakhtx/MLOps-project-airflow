@@ -1,0 +1,41 @@
+artifact_path: catboost_model
+flavors:
+  catboost:
+    catboost_version: 1.2.7
+    code: null
+    data: model.cb
+    model_type: CatBoostClassifier
+    save_format: cbm
+  python_function:
+    data: model.cb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.catboost
+    python_version: 3.12.6
+mlflow_version: 2.19.0
+model_size_bytes: 321580
+model_uuid: 66d41c08dc924e86bec0e1ba9a708daa
+run_id: bd742256a45f4f9e8a3fc2198e16c8e8
+saved_input_example_info:
+  artifact_path: input_example.json
+  serving_input_path: serving_input_example.json
+  type: json_object
+signature:
+  inputs: '[{"type": "double", "name": "Age", "required": true}, {"type": "double",
+    "name": "Gender", "required": true}, {"type": "double", "name": "Ethnicity", "required":
+    true}, {"type": "double", "name": "ParentalEducation", "required": true}, {"type":
+    "double", "name": "StudyTimeWeekly", "required": true}, {"type": "double", "name":
+    "Absences", "required": true}, {"type": "double", "name": "Tutoring", "required":
+    true}, {"type": "double", "name": "ParentalSupport", "required": true}, {"type":
+    "double", "name": "Extracurricular", "required": true}, {"type": "double", "name":
+    "Sports", "required": true}, {"type": "double", "name": "Music", "required": true},
+    {"type": "double", "name": "Volunteering", "required": true}, {"type": "double",
+    "name": "GPA", "required": true}, {"type": "double", "name": "Academic_Engagement",
+    "required": true}, {"type": "double", "name": "Parental_Involvement", "required":
+    true}, {"type": "double", "name": "Absenteeism Impact", "required": true}, {"type":
+    "double", "name": "Activity Diversity", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1,
+    1]}}]'
+  params: null
+utc_time_created: '2025-01-13 05:18:04.976701'

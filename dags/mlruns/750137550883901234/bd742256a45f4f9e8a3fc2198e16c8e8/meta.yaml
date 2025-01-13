@@ -1,0 +1,15 @@
+artifact_uri: file:///G:/AI%2C%20ML%2C%20and%20Python/mlops-course/final-project/project/dags/mlruns/750137550883901234/bd742256a45f4f9e8a3fc2198e16c8e8/artifacts
+end_time: 1736745502013
+entry_point_name: ''
+experiment_id: '750137550883901234'
+lifecycle_stage: active
+run_id: bd742256a45f4f9e8a3fc2198e16c8e8
+run_name: learned-pug-546
+run_uuid: bd742256a45f4f9e8a3fc2198e16c8e8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736745483140
+status: 4
+tags: []
+user_id: User

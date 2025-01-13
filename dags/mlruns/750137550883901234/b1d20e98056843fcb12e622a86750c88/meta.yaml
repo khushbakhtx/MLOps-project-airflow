@@ -1,0 +1,15 @@
+artifact_uri: file:///G:/AI%2C%20ML%2C%20and%20Python/mlops-course/final-project/project/dags/mlruns/750137550883901234/b1d20e98056843fcb12e622a86750c88/artifacts
+end_time: 1736746023068
+entry_point_name: ''
+experiment_id: '750137550883901234'
+lifecycle_stage: active
+run_id: b1d20e98056843fcb12e622a86750c88
+run_name: amusing-lynx-170
+run_uuid: b1d20e98056843fcb12e622a86750c88
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736745995222
+status: 3
+tags: []
+user_id: User

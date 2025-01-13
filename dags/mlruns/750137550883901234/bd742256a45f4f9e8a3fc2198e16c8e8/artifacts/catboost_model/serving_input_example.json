@@ -1,0 +1,21 @@
+{
+  "inputs": {
+    "Age": 18.0,
+    "Gender": 1.0,
+    "Ethnicity": 0.0,
+    "ParentalEducation": 4.0,
+    "StudyTimeWeekly": 18.11887935852529,
+    "Absences": 24.0,
+    "Tutoring": 1.0,
+    "ParentalSupport": 0.0,
+    "Extracurricular": 1.0,
+    "Sports": 1.0,
+    "Music": 0.0,
+    "Volunteering": 0.0,
+    "GPA": 1.3962784383778892,
+    "Academic_Engagement": 20.11887935852529,
+    "Parental_Involvement": 4.0,
+    "Absenteeism Impact": 1.324585230968356,
+    "Activity Diversity": 0.3333333333333333
+  }
+}

@@ -1,0 +1,15 @@
+artifact_uri: file:///G:/AI%2C%20ML%2C%20and%20Python/mlops-course/final-project/project/dags/mlruns/750137550883901234/4a8211dfe8dd4bd49e3f20b40dfd8801/artifacts
+end_time: 1736745117648
+entry_point_name: ''
+experiment_id: '750137550883901234'
+lifecycle_stage: active
+run_id: 4a8211dfe8dd4bd49e3f20b40dfd8801
+run_name: serious-wasp-920
+run_uuid: 4a8211dfe8dd4bd49e3f20b40dfd8801
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736745117318
+status: 3
+tags: []
+user_id: User
